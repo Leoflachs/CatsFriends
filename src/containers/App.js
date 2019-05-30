@@ -11,7 +11,8 @@ class App extends Component {
         super();
         this.state = {
             cats: [], 
-            searchField : ''
+            searchField : '', 
+            suggestions:[]
         }
     }
 
@@ -28,7 +29,10 @@ class App extends Component {
         this.setState({
             searchField : event.target.value
         })
+        this.setState({suggestions:''});
     }
+
+    
     render() {
         const { cats, searchField } = this.state;
         const filteredCats = cats.filter(cats => {
